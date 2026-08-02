@@ -1,0 +1,30 @@
+.panel {
+  display: grid;
+  grid-template-columns: minmax(250px, .45fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 20px 22px;
+  background: #e8ece4;
+  border: 1px solid #cbd2c7;
+}
+
+.copy p { margin: 0 0 5px; color: var(--green); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.copy h3 { margin: 0; font: 450 22px/1.1 var(--font-serif), serif; }
+.copy small { display: block; margin-top: 7px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+
+.compose { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 9px; align-items: stretch; }
+.compose textarea { width: 100%; min-width: 0; min-height: 78px; padding: 12px 14px; resize: vertical; font-size: 11px; line-height: 1.5; }
+.actions { display: grid; grid-template-rows: 1fr 1fr; gap: 7px; }
+.compose button { min-height: 35px; border: 0; background: var(--green); color: white; font-size: 10px; font-weight: 800; cursor: pointer; }
+.compose button.remember { border: 1px solid var(--green); background: transparent; color: var(--green); }
+.compose button:hover:not(:disabled) { background: #153e2d; }
+.compose button.remember:hover:not(:disabled) { color: white; }
+.compose button:disabled { background: #aeb3aa; cursor: not-allowed; }
+.compose button.remember:disabled { border-color: #aeb3aa; color: #8e928b; background: transparent; }
+
+@media (max-width: 760px) {
+  .panel { grid-template-columns: 1fr; gap: 14px; padding: 18px; }
+  .compose { grid-template-columns: 1fr; }
+  .compose button { min-height: 42px; }
+}

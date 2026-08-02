@@ -1,0 +1,29 @@
+.bar {
+  max-width: 1144px;
+  margin: 0 auto 20px;
+  padding: 13px 15px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  background: #e8ece4;
+  border: 1px solid #cbd2c7;
+}
+
+.selector { min-width: 0; flex: 1; display: grid; grid-template-columns: 170px minmax(240px, 1fr); gap: 12px; align-items: center; }
+.selector > div { display: grid; gap: 3px; }
+.selector b { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--green); }
+.selector small { color: var(--muted); font-size: 8px; }
+.selector select { width: 100%; min-width: 0; height: 39px; border: 1px solid #bfc8bc; background: #fffef9; padding: 0 34px 0 11px; color: var(--ink); font: 10px var(--font-mono), monospace; }
+
+.actions { flex: 0 0 auto; display: flex; gap: 7px; }
+.actions button { height: 39px; border: 1px solid #aebaae; background: #fffef9; padding: 0 12px; color: var(--green); font-size: 9px; font-weight: 800; cursor: pointer; }
+.actions button:first-child { background: var(--green); border-color: var(--green); color: white; }
+.actions button:disabled { opacity: .4; cursor: not-allowed; }
+
+@media (max-width: 760px) {
+  .bar { margin: 0 18px 18px; align-items: stretch; flex-direction: column; }
+  .selector { grid-template-columns: 1fr; gap: 8px; }
+  .actions { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .actions button { padding: 0 8px; }
+}

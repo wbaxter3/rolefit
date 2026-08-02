@@ -1,0 +1,64 @@
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 24px 30px 26px;
+  background: #e8ece4;
+  border-bottom: 1px solid #cbd2c7;
+}
+
+.copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, .55fr) minmax(360px, 1fr);
+  gap: 32px;
+  align-items: end;
+}
+
+.copy :global(.eyebrow) { margin-bottom: 7px; }
+.copy h2 { margin: 0; font: 450 24px/1.15 var(--font-serif), serif; }
+.copy h2 b { font: 500 10px var(--font-mono), monospace; color: var(--green); }
+.copy > p { max-width: 660px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+
+.compose {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 9px;
+  align-items: stretch;
+}
+
+.compose textarea { width: 100%; min-width: 0; min-height: 84px; resize: vertical; padding: 12px 14px; font-size: 11px; line-height: 1.5; }
+.compose button { width: 100%; height: auto; min-height: 84px; }
+
+.proposal {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 17px 18px;
+  background: #fffef9;
+  border: 1px solid #c8cec3;
+  box-shadow: inset 3px 0 0 var(--lime);
+}
+
+.proposal > div:first-child { min-width: 0; }
+.proposal > div:last-child { display: flex; flex: 0 0 auto; align-items: center; gap: 14px; }
+.proposal span { color: var(--green); font: 8px var(--font-mono), monospace; text-transform: uppercase; letter-spacing: .09em; }
+.proposal h3 { margin: 5px 0 7px; font-size: 12px; }
+.proposal p { margin: 4px 0; color: #5f665d; font-size: 10px; line-height: 1.45; }
+.proposal small { display: block; margin-top: 10px; color: var(--muted); font: 8px var(--font-mono), monospace; }
+.proposal :global(.tool-button) { min-width: 120px; }
+.proposal :global(.text-button) { color: #8a4d3c; }
+
+.warnings { margin-top: 10px; padding: 9px 10px; background: #f4e8d4; border-left: 2px solid #ba7b30; }
+.warnings b { font-size: 9px; }
+.warnings p { margin: 3px 0; }
+
+@media (max-width: 760px) {
+  .panel { padding: 22px 18px; }
+  .copy { grid-template-columns: 1fr; gap: 10px; }
+  .compose { grid-template-columns: 1fr; }
+  .compose button { min-height: 42px; }
+  .proposal { flex-direction: column; }
+  .proposal > div:last-child { justify-content: flex-end; }
+}
